@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int coundigits(int n)
+{
+  int noofdigitsineachround=0;
+
+  while(n>0)
+  {
+    noofdigitsineachround=noofdigitsineachround+1;
+    n=n/10;
+  }
+  return noofdigitsineachround;
+}
+
+int main()
+{
+  int x;
+  cin>> x;
+  int digits=coundigits(x);
+  cout<<digits;
+}
