@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+  using namespace std;
+
+int countnum(int n)
+{
+  int cou=(int)(log10(n)+1);
+  return cou;
+}
+int main()
+{
+  int N;
+  cout<<"enter the number to be counted"<<endl;
+  cin>>N;
+  int reversednum=countnum(N);
+  cout<<reversednum;
+  return 0;
+}
