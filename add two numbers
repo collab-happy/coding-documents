@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main{
+public static void main(String... args)
+{
+Scanner object = new Scanner(System.in);
+
+System.out.println("enter the first word");
+int a = object.nextInt();
+
+System.out.println("enter the next word);
+int b = object.nextInt();
+
+int sum = a+b;
+System.out.println("sum is equal to" +sum);
+
+object.close();
+}
+}
+
