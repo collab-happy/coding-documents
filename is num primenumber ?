@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main{
+public static void main(string... args){
+Scanner object = new Scanner(System.in);
+System.out.print("enter the no for prime no check");
+int n = object.nextInt();
+
+boolean isprime = true ;
+for (int i =2; i<=Math.sqrt(n) ; i++){
+if ( n % i ==0){
+isprime = false ;
+break ;
+}
+}
+System.out.print(" the given no is :" + isprime);
+}
+}
