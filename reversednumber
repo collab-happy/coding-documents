@@ -1,0 +1,17 @@
+import java.util.*;
+public class main{
+public static void main(String... args){
+Scanner object = new Scanner(System.in);
+System.out.print("enter the number");
+int num = object.nextInt();
+
+int originalnumber = num;
+int reversednum = 0;
+while(num!=0){
+int digit = num % 10;
+reversednum = reversednum * 10 + digit;
+num = num % 10;
+}
+System.out.print("reversednumber" + reversednum);
+}
+}
