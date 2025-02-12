@@ -1,0 +1,72 @@
+// how to create arraylist 
+ArrayList<Type>name=new Arraylist<>() ;
+
+// how to add elements 
+name.add(" ");
+name.add(" ");
+
+// now a program for both
+import java.util.*;
+public class Main{
+  public static void main(String... args){
+   ArrayList<String> friends = new ArrayList<>();
+    friends.add("Abhishek");
+    friends.add("Akarshi ");
+    System.out.println("freinds list " + friends);
+  }
+}
+// now to add more friends
+friends.add("armyman");
+//new updated output is 
+//freinds list [Abhishek, Akarshi , armyman]
+
+//remove for removing element
+friends.remove("Abhishek"); // removes Abhishek
+freinds.remove(0); // removing by elements;
+
+//now for updating and accessing elements ;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      ArrayList<String> friends = new ArrayList<>(Array.asList("abhi" , "abhinav ", "arya " , "jain"));
+      System.out.println("name at second index " +friends.get(2)); // gives arya 
+      List.set(1 , "aman ");
+      System.out.println("name at second index " +friends.get(2)); // gives arya as it replaces abhinav
+    }
+}
+// set method will replace but add method will move one index 
+
+// now to remove elements
+friends.remove(2);       //removes 2 index
+friends.remove("abhi");  //removes abhi
+friends.clear();         // clears all
+
+// someother keywords like.lastIndexof();
+
+System.out.println("index of abhinav" +friends.indexOf("abhinav"));
+//this gives -1 because it was replaced by set method;
+
+System.out.println("index of jain" +friends.indexOf("jain"));
+// this gives 3 
+
+// if multiple duplicate elements then for last index name.lastIndexOf("name");
+
+//for checking wheter an element is contained in the list
+ System.out.println(friends.contains("salmankhan")); //gives false
+
+//for iterating that is traversing and printing
+Iterator<String> itr = friends.iterator();
+while(itr.hasNext()){
+  System.out.print(itr.next() + " ");
+//this gives all the names in list
+
+// now if we want to sort 
+  Collections.sort(friends);
+  System.out.println(friends); // give name in roll no wise sorting
+// this was all for the arraylist .
+
+
+
+
+
+
