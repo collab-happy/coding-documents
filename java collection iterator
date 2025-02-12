@@ -1,0 +1,61 @@
+//iterator creation
+Iterator<type> itr = name.interator();
+//hasNext()	Returns true if more elements exist.
+//next()	Returns the next element in the collection.
+//remove()	Removes the last element returned by next().
+
+//simple code
+import java.util.*;
+public class Main {
+public static void main(String[] args) {
+ArrayList<String> fruits = new ArrayList<>(Arrays.asList("Apple", "Banana", "Mango", "Orange"));
+Iterator<String> itr = fruits.iterator();  // Gets the iterator
+while (itr.hasNext()) {  // Checking if more elements exist
+System.out.println(itr.next());  // Printing the next element
+        }
+    }
+}
+
+// now to remove elements 
+import java.util.*;
+public class Main{
+public static void main(String... args){
+  ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(10 , 20 30 , 40 ));
+Iterator<Integer> itr = numbers.iterator();
+  while(itr.hasNext()){
+int num = itr.next();
+    if(num==20){
+      itr.remove();
+    }
+  }
+  System.out.println(numbers);
+}
+}
+// forward and backward traversal
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+
+        ListIterator<String> itr = list.listIterator();
+
+        System.out.println("Forward Traversal:");
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");  // Moving forward
+        }
+
+        System.out.println("\nBackward Traversal:");
+        while (itr.hasPrevious()) {
+            System.out.print(itr.previous() + " ");  // Moving backward
+        }
+    }
+}
+// iterator has only forward traversal while listiterator has both forward and backward
+
+
+
+
+
+
+  
