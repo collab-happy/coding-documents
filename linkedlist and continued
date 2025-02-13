@@ -1,0 +1,574 @@
+// how it is created
+LinkedList<Type> list = new LinkedList<>();
+
+// for adding at the end
+add();
+addLast();
+offerLast();
+
+//for any specific index 
+add(index , value);
+
+//for adding at front
+add.First();
+addFirst();
+offerFirst();
+
+//accessing elements
+get(index);
+getFirst();
+getLast();
+
+//returning without removing
+peek();
+peekFirst();
+peekLast();
+
+//updating element 
+set(index , value);
+
+//removing elements 
+remove(int index);
+remove(name);
+removeFirst();
+removeLast();
+
+//another remove method is poll()
+poll();
+pollFirst();
+pollLast();
+clear()   //removes all element
+
+  //some other methods
+  indexof(name);
+lastindexof(name);
+contains(name);
+size();
+isEmpty();
+
+//iterators
+iterator();   // returns an iterator
+listiterator();
+descendingIterator();
+foreach();
+
+//create and add elements in linkedlist
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+
+        list.add("Apple");
+        list.add("Banana");
+        list.addFirst("Mango");
+        list.addLast("Orange");
+
+        System.out.println("LinkedList: " + list);
+    }
+}
+//output hai LinkedList: [Mango, Apple, Banana, Orange]
+
+//accesing and updating
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(10, 20, 30, 40));
+
+        System.out.println("First Element: " + list.getFirst());
+        System.out.println("Last Element: " + list.getLast());
+
+        list.set(1, 25);
+        System.out.println("Updated LinkedList: " + list);
+    }
+}
+// output First Element: 10
+Last Element: 40
+Updated LinkedList: [10, 25, 30, 40]
+
+//removing elements
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>(Arrays.asList("A", "B", "C", "D"));
+
+        list.removeFirst();
+        list.removeLast();
+        list.remove("B");
+
+        System.out.println("Final LinkedList: " + list);
+    }
+}
+//output qill be Final LinkedList: [C]
+
+
+//iterator chalane ke liye 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5));
+
+        // Using iterator
+        Iterator<Integer> itr = list.iterator();
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+        
+        System.out.println();
+
+        // Using descendingIterator (Reverse order)
+        Iterator<Integer> revItr = list.descendingIterator();
+        while (revItr.hasNext()) {
+            System.out.print(revItr.next() + " ");
+        }
+    }
+}
+//output 
+1 2 3 4 5 
+5 4 3 2 1 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+  // now stack which is like lakdi ka gatha which is lifo
+
+  // for creating stack
+  Stack<Type> name = new Stack<>();
+
+//same for adding in stack
+stack.Push(); //yahan pe stack kuch bhi ho sakta hai its not Stack
+
+//for removing in stack
+stack.pop();
+
+//for first eleent we use peek but in stack it will be the top elemetn
+stack.peek();
+
+//for checking wheter the stack is empty 
+stack.isEmpty();
+
+// now code for all 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Stack: " + stack);
+        System.out.println("Top element: " + stack.peek());
+
+        stack.pop();
+        System.out.println("After pop: " + stack);
+
+        System.out.println("Is empty? " + stack.isEmpty());
+        System.out.println("Position of 10: " + stack.search(10));
+    }
+}
+//out put 
+Stack: [10, 20, 30]
+Top element: 30
+After pop: [10, 20]
+Is empty? false
+Position of 10: 2
+
+  // end of linkedlist 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// now we have next is queue 
+  // basically it is like sequence of people trying to enter a assembly
+  // first in first out
+
+  //for creating queue 
+  Queue<Type> name = new Linkedlist<>();
+
+// for adding in element
+name.add();
+
+//for removing element
+name.remove();
+
+//for getting first element
+name.peek();
+or
+  name.poll();
+
+// now we look for PriorityQueue
+// this doesnt follow fifo
+// this give element based on priority
+
+// for creating priorityqueue
+Queue<Type> name = new PriorityQueue<>();
+
+//for adding
+name.add();
+
+// example with code
+import java.util.*;
+
+public class PriorityQueueExample {
+    public static void main(String[] args) {
+        // Creating a PriorityQueue with natural ordering (ascending order)
+        Queue<Integer> priorityQueue = new PriorityQueue<>();
+        
+        // Add elements
+        priorityQueue.add(30);
+        priorityQueue.add(10);
+        priorityQueue.add(20);
+        
+        // Display the priority queue
+        System.out.println("PriorityQueue: " + priorityQueue);  // Output: [10, 20, 30]
+      // out put is arrange in min heap style
+        
+        // Remove and display the head of the queue
+        System.out.println("Removed: " + priorityQueue.remove());  // Output: 10
+        
+        // Peek the head of the queue
+        System.out.println("Front element: " + priorityQueue.peek());  // Output: 20
+        
+        // Poll the front element
+        System.out.println("Polled: " + priorityQueue.poll());  // Output: 20
+    }
+}
+//output  PriorityQueue: [10, 20, 30]
+Removed: 10
+Front element: 20
+Polled: 20
+
+  ----------------------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+public class PriorityQueueExample {
+    public static void main(String[] args) {
+        // Create a PriorityQueue that orders integers naturally (ascending order)
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the queue
+        pq.add(30);
+        pq.add(10);
+        pq.add(20);
+        
+        // Display the PriorityQueue (elements will be ordered based on priority)
+        System.out.println("PriorityQueue: " + pq);  // Output: [10, 20, 30]
+        
+        // Poll elements (highest priority element is removed)
+        System.out.println("Polled: " + pq.poll());  // Output: 10
+        System.out.println("Polled: " + pq.poll());  // Output: 20
+        System.out.println("Polled: " + pq.poll());  // Output: 30
+    }
+}
+
+//PriorityQueue: [10, 20, 30]
+Polled: 10
+Polled: 20
+Polled: 30
+
+  // reverse order 
+  import java.util.*;
+
+public class CustomPriorityQueueExample {
+    public static void main(String[] args) {
+        // Create a PriorityQueue with a custom comparator (max-heap)
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        
+        // Add elements to the queue
+        pq.add(10);
+        pq.add(30);
+        pq.add(20);
+        
+        // Display the PriorityQueue (elements will be ordered in descending order)
+        System.out.println("PriorityQueue (Max-Heap): " + pq);  // Output: [30, 10, 20]
+        
+        // Poll elements (highest priority element is removed)
+        System.out.println("Polled: " + pq.poll());  // Output: 30
+        System.out.println("Polled: " + pq.poll());  // Output: 20
+        System.out.println("Polled: " + pq.poll());  // Output: 10
+    }
+}
+//output PriorityQueue (Max-Heap): [30, 10, 20]
+Polled: 30
+Polled: 20
+Polled: 10
+
+
+  // for adding element in priorityqueue
+import java.util.*;
+
+public class AddMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the PriorityQueue
+        pq.add(10);
+        pq.add(20);
+        pq.add(5);
+        
+        // Display the PriorityQueue
+        System.out.println("PriorityQueue after add: " + pq);  // Output: [5, 20, 10]
+    }
+}
+
+
+// Adds an element to the PriorityQueue (returns false if the queue is full in bounded queues)
+import java.util.*;
+
+public class OfferMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Offer elements to the PriorityQueue
+        System.out.println("Offer result: " + pq.offer(30));  // Output: true
+        System.out.println("Offer result: " + pq.offer(15));  // Output: true
+        
+        // Display the PriorityQueue
+        System.out.println("PriorityQueue after offer: " + pq);  // Output: [15, 30]
+    }
+}
+
+// gives highest priority also removes 
+import java.util.*;
+
+public class PollMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the PriorityQueue
+        pq.add(10);
+        pq.add(20);
+        pq.add(5);
+        
+        // Poll the highest-priority element
+        System.out.println("Polled: " + pq.poll());  // Output: 5
+        
+        // Display the remaining PriorityQueue
+        System.out.println("PriorityQueue after poll: " + pq);  // Output: [10, 20]
+    }
+}
+
+
+
+// poll removes but peek doesnt 
+import java.util.*;
+
+public class PeekMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the PriorityQueue
+        pq.add(15);
+        pq.add(30);
+        pq.add(10);
+        
+        // Peek the highest-priority element
+        System.out.println("Peeked: " + pq.peek());  // Output: 10
+        
+        // Display the PriorityQueue after peek (no removal)
+        System.out.println("PriorityQueue after peek: " + pq);  // Output: [10, 30, 15]
+    }
+}
+
+// remove() removes and gives head (higest priority sab same bakiyon jaisa bas priority ke hisab se)
+import java.util.*;
+
+public class RemoveMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the PriorityQueue
+        pq.add(5);
+        pq.add(10);
+        pq.add(15);
+        
+        // Remove and return the highest-priority element
+        System.out.println("Removed: " + pq.remove());  // Output: 5
+        
+        // Display the remaining PriorityQueue
+        System.out.println("PriorityQueue after remove: " + pq);  // Output: [10, 15]
+    }
+}
+
+
+// isEmpty() to check 
+// size() 
+// clear()
+
+// for returning array containing all the elements in priorityqueue
+//toArray()
+import java.util.*;
+
+public class ToArrayMethodExample {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        // Add elements to the PriorityQueue
+        pq.add(10);
+        pq.add(20);
+        pq.add(5);
+        
+        // Convert the PriorityQueue to an array
+        Object[] array = pq.toArray();
+        
+        // Print the array
+        System.out.println("PriorityQueue as array: " + Arrays.toString(array));  // Output: [5, 20, 10]
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// array deque creator
+  ArrayDeque<Type> name = new Arraydeque<>();
+
+// for adding elements in array 
+addFirst();
+addLast();
+
+// all other are same like other with minor change 
+removeFirst();
+removeLast();
+
+offerFirst(): Inserts the specified element at the front of the deque (returns false if the deque cannot accept the element).
+offerLast(): Inserts the specified element at the end of the deque (returns false if the deque cannot accept the element).
+
+pollFirst() and pollLast() Methods
+These methods remove and return the first or last element, returning null if the deque is empty.
+
+peekFirst() and peekLast() Methods
+These methods retrieve, but do not remove, the first or last element.
+
+getFirst() and getLast() Methods
+These methods retrieve, but do not remove, the first and last elements, and throw an exception if the deque is empty.
+
+size() and clear() Methods
+These methods allow you to check the number of elements in the deque and clear all elements.
+
+isEmpty() Method
+This method checks whether the deque is empty.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ // hashSet stores unique elements without maintaining any order.
+// cannot use indexing
+ // only one null element
+  
+add();
+remove();
+contains();
+size();
+isEmpty();
+clear();
+iterator();
+
+//toArray()
+// Returns an array containing all the elements in the set.
+Object[] array = set.toArray();
+
+// for adding to set
+ex set1 and set2 
+  set1.addAll(set2);
+
+// for common elements between two sets 
+Set1.retainAll(set2);
+
+//for removing elements of set 2 from set 1;
+Set1.removeAll(set2);
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+// linkedhashset
+  // like hashset
+  // order is maintained here unlike hashset
+// no duplicate
+
+  add(E e)
+remove(Object o)
+contains(Object o)
+  isEmpty()
+size()
+clear()
+
+// for adding to set
+ex set1 and set2 
+  set1.addAll(set2);
+
+// for common elements between two sets 
+Set1.retainAll(set2);
+
+//for removing elements of set 2 from set 1;
+Set1.removeAll(set2);
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+HashSet does not maintain any order.
+LinkedHashSet maintains insertion order.
+TreeSet maintains a sorted order (ascending by default).
+*/
+
+
+import java.util.*;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Create a TreeSet
+        TreeSet<Integer> set = new TreeSet<>();
+        
+        // Add elements
+        set.add(10);
+        set.add(30);
+        set.add(20);
+        
+        // Print the TreeSet (Sorted order)
+        System.out.println("TreeSet: " + set);  // Output: TreeSet: [10, 20, 30]
+        
+        // Remove an element
+        set.remove(20);
+        System.out.println("After removal: " + set);  // Output: After removal: [10, 30]
+        
+        // Get the first and last elements
+        System.out.println("First Element: " + set.first());  // Output: First Element: 10
+        System.out.println("Last Element: " + set.last());    // Output: Last Element: 30
+        
+        // Check if an element exists
+        System.out.println("Contains 10: " + set.contains(10));  // Output: true
+        
+        // Get the size
+        System.out.println("Size: " + set.size());  // Output: Size: 2
+        
+        // Clear the set
+        set.clear();
+        System.out.println("After clear: " + set);  // Output: After clear: []
+    }
+}
+
+//navigation methods of treeset
+
+import java.util.*;
+
+public class TreeSetNavigation {
+    public static void main(String[] args) {
+        // Create a TreeSet
+        TreeSet<Integer> set = new TreeSet<>();
+        
+        // Add elements
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(40);
+        
+        // Using ceiling() and floor()
+        System.out.println("Ceiling of 25: " + set.ceiling(25));  // Output: 30
+        System.out.println("Floor of 25: " + set.floor(25));      // Output: 20
+        
+        // Using higher() and lower()
+        System.out.println("Higher than 25: " + set.higher(25));  // Output: 30
+        System.out.println("Lower than 25: " + set.lower(25));    // Output: 20
+        
+        // Poll first and last
+        System.out.println("Poll First: " + set.pollFirst());      // Output: 10
+        System.out.println("Poll Last: " + set.pollLast());        // Output: 40
+    }
+}
